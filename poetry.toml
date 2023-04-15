@@ -1,7 +1,8 @@
-[repositories.aliyun]
-url = "https://mirrors.aliyun.com/pypi/simple/"
-
-[[tool.poetry.source]]
-name = "aliyun"
-url = "https://mirrors.aliyun.com/pypi/simple/"
-default = true
+#中国网络打开这个
+#[repositories.aliyun]
+#url = "https://mirrors.aliyun.com/pypi/simple/"
+#
+#[[tool.poetry.source]]
+#name = "aliyun"
+#url = "https://mirrors.aliyun.com/pypi/simple/"
+#default = true
