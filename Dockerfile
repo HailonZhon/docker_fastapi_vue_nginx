@@ -3,18 +3,18 @@ FROM python:3.9 as build-backend
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
 
-RUN pip install -U pip setuptools wheel && \
-    pip install poetry
-#中国网络打开源
-#RUN pip install -U pip setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+#RUN pip install -U pip setuptools wheel && \
 #    pip install poetry
+#中国网络打开源
+RUN pip install -U pip setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+    pip install poetry
 WORKDIR /app/backend
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 
 COPY backend/pyproject.toml backend/poetry.lock ./
 COPY backend/ app/
 #中国网络打开源
-#COPY  poetry.toml ./
+COPY  poetry.toml ./
 RUN ls -a /app/backend/
 
 RUN poetry install --no-dev
