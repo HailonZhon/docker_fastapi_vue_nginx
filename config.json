@@ -1,0 +1,14 @@
+{
+  "applications": {
+    "backend": {
+      "type": "python",
+      "module": "app.main",
+      "callable": "app"
+    }
+  },
+  "listeners": {
+    "*:80": {
+      "application": "backend"
+    }
+  }
+}
